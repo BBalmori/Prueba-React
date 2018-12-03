@@ -1,9 +1,14 @@
 import { combineReducers } from 'redux';
+import { QUESTION_ANSWER } from './actions'
+import { CHANGE_QUESTION  } from './actions'
+import { SUBMIT } from './actions'
+import { INIT_QUESTION } from './actions'
 
 function score(state = 0, action = {}) {
   switch (action.type) {
-    case "SCORE_QUIZ":
+    case "SUBMIT":
       let newState = state;
+        // evaluar todas las respuestas
       return newState;
       break;
     default:
@@ -13,7 +18,7 @@ function score(state = 0, action = {}) {
 
 function finished(state = false, action = {}) {
   switch (action.type) {
-    case "FINISH_QUIZ":
+    case "SUBMIT":
       let newState = state;
         //cambiamos this.state.finished = true si ya he jugado 10 preguntas
       return newState;
@@ -25,9 +30,9 @@ function finished(state = false, action = {}) {
 
 function currentQuestion(state = 0, action = {}) {
   switch (action.type) {
-    case "PLAY_QUIZ":
+    case "CHANGE_QUESTION":
       let newState = state;
-        //segun la pregunta actual pongo la siguiente preg en this.currentQuestion
+        //modificar currentQuestion cuando hago click en next y previous si hay pregs
       return newState;
       break;
     default:
@@ -37,11 +42,10 @@ function currentQuestion(state = 0, action = {}) {
 
 function questions(state = [], action = {}) {
   switch (action.type) {
-    case "QUESTIONS":
-      let newState = state;
-        //aqui no se muy bien
-      return newState;
-      break;
+    case "QUESTIONS_ANSWER":
+      return state.map((question, i) => {
+        return {...question, userAnswer: action.playload === i ? action.playload.answer : question.userAnswer}
+      })
     default:
       return state;
   }
