@@ -1,37 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
+import Game from './Game.js'
 
+//export default
 class App extends Component {
+  constructor(props){
+      super(props);
+  }
   render() {
-    return (
-      console.log(this.prop.questions)
-/*      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>*/
+    return(
+      <div>
+        <Game question = {this.props.questions[this.props.currentQuestion]} />
+      </div>
     );
   }
 }
 
 function mapStateToProps(state) {
   return {
-/*rellenar codigo*/
+    score: state.score,
+    finished: state.finished,
+    currentQuestion: state.currentQuestion,
+    questions: state.questions
   };
 }
 
-export default connect(mapStateToProps) (App);
-//export default App;
+export default connect(mapStateToProps)(App)
