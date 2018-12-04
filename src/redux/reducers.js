@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { QUESTION_ANSWER } from './actions'
-import { CHANGE_QUESTION  } from './actions'
+import { NEXT_QUESTION  } from './actions'
+import { PREV_QUESTION } from './actions'
 import { SUBMIT } from './actions'
 import { INIT_QUESTION } from './actions'
 
@@ -30,11 +31,17 @@ function finished(state = false, action = {}) {
 
 function currentQuestion(state = 0, action = {}) {
   switch (action.type) {
-    case "CHANGE_QUESTION":
-      let newState = state;
-        //modificar currentQuestion cuando hago click en next y previous si hay pregs
-      return newState;
-      break;
+    case "NEXT_QUESTION":
+      if( state === action.load.length-1 ){
+        state = 0;
+        return state;
+      }
+      return state + 1;
+    case "PREV_QUESTION":
+      if( state === 0 ){
+        return state;
+      }
+      return state - 1;
     default:
       return state;
   }
@@ -44,7 +51,7 @@ function questions(state = [], action = {}) {
   switch (action.type) {
     case "QUESTIONS_ANSWER":
       return state.map((question, i) => {
-        return {...question, userAnswer: action.playload === i ? action.playload.answer : question.userAnswer}
+        return {...question, userAnswer: action.load.index === i ? action.load.answer : question.userAnswer}
       })
     default:
       return state;
