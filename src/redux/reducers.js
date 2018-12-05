@@ -19,7 +19,7 @@ function score(state = 0, action = {}) {
 
 function finished(state = false, action = {}) {
   switch (action.type) {
-    case "END":
+    case "SUBMIT":
       state = true;
       return state;
     default:

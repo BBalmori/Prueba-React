@@ -1,10 +1,31 @@
 .App {
   text-align: center;
+  align-items: center;
+  align-self: center;
   background-color: rgba(200, 255, 200, 0.25);
-  margin-left: 15%;
-  margin-right: 15%;
   border: solid 0.5em;
   border-color: green;
+}
+
+.Question {
+  text-align: center;
+  border: solid;
+  color: white;
+  background-color: green;
+  font-family: Georgia, serif;
+  margin-top: 0%;
+}
+
+#imagen {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.texto {
+  text-align: center;
+  margin-top: 1em;
+  width: 50%;
+  color: black;
 }
 
 #prev {
@@ -35,23 +56,8 @@
   font-family: Georgia, serif;
 }
 
-#end {
-  width: 8em;
-  height: 2em;
-  background-color: yellow;
-  color: black;
-  border-color: yellow;
-  font-family: Georgia, serif;
-}
-
 #tips {
   margin-top: 1em;
   background-color: grey;
   color: black;
-}
-
-
-.botones {
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
