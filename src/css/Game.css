@@ -1,32 +1,31 @@
 .Game {
-
+  align-items: center;
+  text-align: center;
+  align-self: center;
+  align-content: center;
 }
 
 .GameQuestion {
-  margin-left: 1em;
-  margin-right: 1em;
   text-align: center;
   border: solid;
   color: white;
-  background-color: grey;
+  background-color: green;
   font-family: Georgia, serif;
   margin-top: 0%;
 }
 
-#texto {
-  align-self: center;
-  align-items: center;
+.texto {
   text-align: center;
-  margin: 0%;
-  width: 20em;
+  margin-top: 1em;
+  width: 50%;
   color: black;
 
 }
 
-#imagen {
-  align-self: start;
-  margin-left: 2em;
+.imagen {
+  text-align: center;
+  margin-left: 1em;
 }
 
-#textoimg {
+#tipslist {
 }

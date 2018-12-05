@@ -1,30 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {questionAnswer, nextQuestion, prevQuestion, submit, initQuestions} from './redux/actions.js';
+import {questionAnswer, nextQuestion, prevQuestion, submit, end} from './redux/actions.js';
 import Game from './Game.js';
 import './css/App.css';
 
 //export default
 class App extends Component {
-  constructor(props){
-      super(props);
-  }
   render() { //background-image: url("");
     console.log(this.props);
     return(
       <div className="App">
-        <div className="todo">
-          <Game question = {this.props.questions[this.props.currentQuestion]}
-            onQuestionAnswer={(answer) => {
-              this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))
-          }} />
-          <button id="tips">Tips</button>
-        </div>
-        <div className="botones">
-          <button id="prev" onClick={()=>this.props.dispatch(prevQuestion(this.props.currentQuestion, this.props.questions.length))}>PREV</button>
-          <button id="next" onClick={()=>this.props.dispatch(nextQuestion(this.props.currentQuestion, this.props.questions.length))}>NEXT</button>
-          <button id="submit" onClick={()=>this.props.dispatch(submit(this.props.questions))}>SUBMIT</button>
-        </div>
+            <div className="todo">
+                <Game question = {this.props.questions[this.props.currentQuestion]}
+                  onQuestionAnswer={(answer) => {
+                    this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))}}/>
+            </div>
+            <div className="botones">
+                <button id="prev" onClick={()=>this.props.dispatch(prevQuestion(this.props.currentQuestion, this.props.questions.length))}>PREV</button>
+                <button id="next" onClick={()=>this.props.dispatch(nextQuestion(this.props.currentQuestion, this.props.questions.length))}>NEXT</button>
+                <button id="submit" onClick={()=>this.props.dispatch(submit(this.props.questions))}>SUBMIT</button>
+                <button id="end" onClick={()=>this.props.dispatch(end(this.props.questions))}>END</button>
+            </div>
       </div>
     );
   }

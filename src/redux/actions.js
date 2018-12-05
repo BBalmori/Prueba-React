@@ -2,7 +2,8 @@ export const QUESTION_ANSWER = 'QUESTION_ANSWER';
 export const NEXT_QUESTION = 'NEXT_QUESTION';
 export const PREV_QUESTION = 'PREV_QUESTION';
 export const SUBMIT = 'SUBMIT';
-export const INIT_QUESTION = 'INIT_QUESTION';
+export const END = 'END';
+//export const INIT_QUESTION = 'INIT_QUESTION';
 
 export function questionAnswer(index, answer) {
   return {type: 'QUESTION_ANSWER', load: {index, answer}};
@@ -20,6 +21,11 @@ export function submit(questions) {
   return {type: 'SUBMIT', questions: questions};
 }
 
-export function initQuestions(questions, finished) {
-  return {type: 'INIT_QUESTION', questions: questions}
+export function end(questions) {
+  return {type: 'END', questions: questions};
 }
+
+
+/*export function initQuestions(questions, finished) {
+  return {type: 'INIT_QUESTION', questions: questions}
+}*/
