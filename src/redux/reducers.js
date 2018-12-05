@@ -1,17 +1,17 @@
 import { combineReducers } from 'redux';
-import { QUESTION_ANSWER } from './actions'
-import { NEXT_QUESTION  } from './actions'
-import { PREV_QUESTION } from './actions'
-import { SUBMIT } from './actions'
-import { INIT_QUESTION } from './actions'
+import { QUESTION_ANSWER, NEXT_QUESTION, PREV_QUESTION, SUBMIT, INIT_QUESTION } from './actions'
 
 function score(state = 0, action = {}) {
   switch (action.type) {
     case "SUBMIT":
-      let newState = state;
-        // evaluar todas las respuestas
-      return newState;
-      break;
+      let count = 0;
+      for (let i = 0; i<action.questions.length; i++) {
+        if (action.questions[i].answer === action.questions[i].userAnswer) {
+          count++;
+        }
+      }
+      state = count;
+      return state;
     default:
       return state;
   }
@@ -20,10 +20,8 @@ function score(state = 0, action = {}) {
 function finished(state = false, action = {}) {
   switch (action.type) {
     case "SUBMIT":
-      let newState = state;
-        //cambiamos this.state.finished = true si ya he jugado 10 preguntas
-      return newState;
-      break;
+      state = true;
+      return state;
     default:
       return state;
   }
@@ -49,7 +47,7 @@ function currentQuestion(state = 0, action = {}) {
 
 function questions(state = [], action = {}) {
   switch (action.type) {
-    case "QUESTIONS_ANSWER":
+    case "QUESTION_ANSWER":
       return state.map((question, i) => {
         return {...question, userAnswer: action.load.index === i ? action.load.answer : question.userAnswer}
       })

@@ -1,0 +1,51 @@
+.App {
+
+  background-color: rgba(250, 250, 50, 0.25);
+  margin-left: 10em;
+  margin-right: 10em;
+  border: solid 1em;
+  border-color: grey;
+}
+
+#prev {
+  width: 8em;
+  height: 2em;
+  background-color: red;
+  color: white;
+  border-color: red;
+  font-family: Georgia, serif;
+}
+#next {
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 8em;
+  height: 2em;
+  background-color: green;
+  color: white;
+  border-color: green;
+  font-family: Georgia, serif;
+}
+#submit {
+  width: 8em;
+  height: 2em;
+  background-color: blue;
+  color: white;
+  border-color: blue;
+  font-family: Georgia, serif;
+}
+
+#tips {
+  margin-top: 1em;
+  background-color: grey;
+  color: black;
+}
+
+.todo {
+
+}
+
+.botones {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}

@@ -1,0 +1,32 @@
+.Game {
+
+}
+
+.GameQuestion {
+  margin-left: 1em;
+  margin-right: 1em;
+  text-align: center;
+  border: solid;
+  color: white;
+  background-color: grey;
+  font-family: Georgia, serif;
+  margin-top: 0%;
+}
+
+#texto {
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  margin: 0%;
+  width: 20em;
+  color: black;
+
+}
+
+#imagen {
+  align-self: start;
+  margin-left: 2em;
+}
+
+#textoimg {
+}

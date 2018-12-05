@@ -1,10 +1,9 @@
 import { Provider } from 'react-redux';
 import GlobalState from './reducers';
 import { createStore } from 'redux';
-import { questions } from "../assets/mock-data"; // creo que ahora si
-
+import { questions } from "../assets/mock-data";
 import React from 'react';
-import App from '../App';
+import App from '../App.js';
 
 export default class ReduxProvider extends React.Component {
   constructor(props) {
