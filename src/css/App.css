@@ -1,33 +1,46 @@
 .App {
+
+}
+.Header {
+  text-align: center;
+  border: solid;
+}
+
+
+.Body {
+text-align: center;
+}
+.Input {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.Buttons {
   text-align: center;
   align-items: center;
   align-self: center;
-  background-color: rgba(200, 255, 200, 0.25);
-  border: solid 0.5em;
-  border-color: green;
+  align-content: center;
 }
 
-.Question {
+#question {
   text-align: center;
-  border: solid;
   color: white;
   background-color: green;
   font-family: Georgia, serif;
   margin-top: 0%;
 }
 
-#imagen {
-  margin-left: auto;
-  margin-right: auto;
+#img {
+  align-items: center;
+  align-self: center;
+  align-content: center;
 }
 
-.texto {
+#texto {
   text-align: center;
-  margin-top: 1em;
   width: 50%;
   color: black;
 }
-
 #prev {
   width: 8em;
   height: 2em;

@@ -13,7 +13,7 @@ export default class Header extends React.Component {
     this.props.appPrevClick();
   }
   nextClick() {
-    this.props.appNextClick();
+      this.props.appNextClick();
   }
   submitClick() {
     this.props.appSubmitClick();
@@ -21,7 +21,7 @@ export default class Header extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="Buttons">
         <button id="prev" onClick={this.prevClick}>PREV</button>
         <button id="next" onClick={this.nextClick}>NEXT</button>
         <button id="submit" onClick={this.submitClick}>SUBMIT</button>
